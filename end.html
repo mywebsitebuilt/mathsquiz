@@ -1,0 +1,44 @@
+<!Doctype html>
+<html>
+    <head>
+
+<style>
+</style>
+</head>
+<body bgcolor="seashell">
+    <a href="index.html">
+        <input type="button" value="Home" style="height:30px;color:rgb(237, 9, 40);background-color: rgb(240, 238, 129); width:70px;">
+        </a>
+    <a href="start.html">
+        <input type="button" value="back" style="height:30px;color:red;background-color: rgb(140, 251, 214); width:70px;">
+        </a>
+        <p id="hello" style="font-size: 100px; color: rgb(250, 10, 54); text-align:center;"></p>
+    <h1 id="q" style="font-size:80px; color:rgb(231, 18, 199); display: inline-block;">You Score :  </h1>
+    <h1 id="qu" style="font-size:100px; color:blue;display: inline-block;"></h1> 
+    <h1 id="grade" style="font-size: 100px; color: rgb(141, 94, 25); text-align:center;"></h1>
+
+</body >
+
+<script type='text/javascript'>
+
+hello=document.getElementById('hello');
+
+str=localStorage.getItem('final');
+data=JSON.parse(str);
+hello.innerHTML="Hello"+" "+(data.name).toUpperCase();
+document.getElementById('qu').innerHTML=" "+data.corcount+" / "+"10";
+score=Number(data.corcount);
+grade=document.getElementById('grade');
+if(score>8){
+    grade.innerHTML='Very Very Good';
+} else if(score>5 & score<9){
+    grade.innerHTML='Very Good';
+} else if(score>2 & score<6){
+    grade.innerHTML='Good';
+} else{
+    grade.innerHTML='Need To Improve';
+}
+</script>
+
+
+</html>
